@@ -1,0 +1,99 @@
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{titling}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{graphicx}
+
+% Basic Document Settings
+
+\setCJKmainfont{SIMFANG.ttf}[Path=/root/jupyter/dataVisualization/final project/fonts/, BoldFont=FZCKJW.TTF, ItalicFont=SIMKAI.ttf]
+\newfontfamily\sectionfont{SIMKAI.ttf}[Path=/root/jupyter/dataVisualization/final project/fonts/, AutoFakeBold,AutoFakeSlant]
+
+\setlength{\headheight}{12.64723pt}
+\topmargin=-0.5in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+\setlength{\droptitle}{-6em}  
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{2em}
+
+\titleformat*{\section}{\Large\sectionfont}
+\posttitle{\par\end{center}}
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\rhead{\hmwkAuthorName}
+\lhead{\textit{\leftmark}}
+\lfoot{\textit{\hmwkTitle}}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\newcommand{\hmwkAuthorName}{\textit{蒋翌坤} 20307100013}
+
+% Title Page
+
+
+
+\titleformat{\section}         % Customise the \section command 
+  {\Large\scshape\raggedright\bfseries} % Make the \section headers large (\Large),
+                               % small capitals (\scshape) and left aligned (\raggedright)
+  {\thesection}{1em}                      % Can be used to give a prefix to all sections, like 'Section ...'
+  {}                           % Can be used to insert code before the heading
+  % [\titlerule]                 % Inserts a horizontal line after the heading
+\titlespacing*{\section}{0cm}{*1.8}{*1.8}
+
+\titleformat{\subsection}
+  {\large\raggedright\itseries}
+  {\thesection}{1em}
+  {}
+\titlespacing*{\subsection}{0cm}{*1.8}{*0.6}
+
+
+\newlength{\Han}
+\settowidth{\Han}{汉}
+\newcommand{\spreadCJK}[2]{\makebox[#1\Han][s]{#2}}
+
+\newcommand{\makecover}{
+
+  % \begin{figure}[htbp]
+  % \begin{center}
+  % \includegraphics[width=0.7\textwidth]{FudanLOGO.eps}
+  % \end{center}
+  % \end{figure}
+
+  % \begin{figure}[htbp]
+  %   \begin{center}
+  %     \includegraphics[width=0.2\textwidth]{xiaohui.eps}
+  %   \end{center}
+  % \end{figure}
+
+  \vspace*{\fill}
+  \begin{center}
+    {\LARGE \textbf{疫情下的谣言传播可视分析系统}\par}
+  
+    \vspace{\stretch{0.5}}
+  
+    \parbox[c]{0.5\textwidth}{%
+      \large \setlength{\baselineskip}{1.5\baselineskip}%
+      \spreadCJK{7}{\textit{课程}}:\quad \textit{程序设计与数据可视化}\par
+      \spreadCJK{7}{\textit{院系}}:\quad \textit{管理学院}\par
+      \spreadCJK{7}{\textit{姓名}}:\quad \textit{蒋翌坤}\par
+      \spreadCJK{7}{\textit{学号}}:\quad 20307100013\par
+      \spreadCJK{7}{\textit{完成日期}}:\quad 2023\textit{年}6\textit{月}1\textit{日}
+    }
+  \end{center}
+
+  \vspace*{\fill}
+
+    
+      
+
+}

@@ -1,2 +1,6 @@
-document
 .ipynb_checkpoints
+*.synctex.gz
+*.xdv
+report.pdf
+final project description.pdf
+fonts/
