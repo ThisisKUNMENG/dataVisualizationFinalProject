@@ -4,6 +4,8 @@
 # 1. province transformation: 将省份名称转化成GeoJson能识别的省份名称
 
 import numpy as np
+import jieba
+import jieba.analyse
 
 def province_transform(province: str | float) -> str | float:
 
@@ -28,6 +30,16 @@ def province_transform(province: str | float) -> str | float:
     else:
         province_trans = province + "省"
     return province_trans
+
+
+def get_chinese_tokens(content: str) -> list[str]:
+     tokens = jieba.cut(content, cut_all=False)
+     return tokens
+
+
+def get_topics(content: str, topK: int=5) -> list[str]:
+     return jieba.analyse.extract_tags(content, topK=topK)
+
 
 if __name__ == "__main__":
     # test case
