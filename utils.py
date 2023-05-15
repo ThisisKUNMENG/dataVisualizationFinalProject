@@ -7,10 +7,10 @@ import numpy as np
 import jieba
 import jieba.analyse
 
-def province_transform(province: str | float) -> str | float:
 
+def province_transform(province: str | float) -> str | float:
     if province is np.NaN:
-            return np.NaN
+        return np.NaN
 
     unique_provinces = {
         "新疆": "新疆维吾尔自治区",
@@ -33,16 +33,25 @@ def province_transform(province: str | float) -> str | float:
 
 
 def get_chinese_tokens(content: str) -> list[str]:
-     tokens = jieba.cut(content, cut_all=False)
-     return tokens
+    tokens = jieba.cut(content, cut_all=False)
+    return tokens
 
 
-def get_topics(content: str, topK: int=5) -> list[str]:
-     return jieba.analyse.extract_tags(content, topK=topK)
+def get_stopwords() -> list[str]:
+    stopwords = []
+    with open("./data/stop_words", "r", encoding="utf-8") as f:
+        for line in f.readlines():
+            stopwords.append(line.strip())
+    return stopwords
 
 
-if __name__ == "__main__":
-    # test case
-    import pandas as pd
-    df = pd.read_csv("./data/rumor_data.csv")
-    print(df["province"].apply(lambda x: province_transform(x)))
+def get_tokens_without_stopwords(tokens: list[str], stopwords: list[str]) -> list[str]:
+    tokens_without_stopwords = []
+    for token in tokens:
+        if token not in stopwords:
+            tokens_without_stopwords.append(token)
+    return tokens_without_stopwords
+
+
+def get_topics(content: str, topK: int = 5) -> list[str]:
+    return jieba.analyse.extract_tags(content, topK=topK)
