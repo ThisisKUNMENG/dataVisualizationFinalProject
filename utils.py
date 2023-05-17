@@ -1,7 +1,7 @@
-# Author: Jiang Yikun
-# Update date: 2023/4/25
-# This utils module is intended to provide the following dicts/functions to the notebook.
+"""
+This utils module is intended to provide the following dicts/functions to the notebook.
 # 1. province transformation: 将省份名称转化成GeoJson能识别的省份名称
+"""
 
 import numpy as np
 import jieba
