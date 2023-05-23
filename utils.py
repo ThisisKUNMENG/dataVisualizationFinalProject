@@ -33,7 +33,7 @@ def province_transform(province: str | float) -> str | float:
 
 
 def get_chinese_tokens(content: str) -> list[str]:
-    tokens = jieba.cut(content, cut_all=False)
+    tokens = jieba.cut(content, cut_all=False, use_paddle=True)
     return tokens
 
 
