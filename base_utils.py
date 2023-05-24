@@ -1,7 +1,7 @@
 """
-This utils module is intended to provide the following dicts/functions to the notebook.
-# 1. province transformation: 将省份名称转化成GeoJson能识别的省份名称
+This utils module is intended to provide basic utilities to the notebook.
 """
+from typing import Generator, Any
 
 import numpy as np
 import jieba
@@ -32,8 +32,8 @@ def province_transform(province: str | float) -> str | float:
     return province_trans
 
 
-def get_chinese_tokens(content: str) -> list[str]:
-    tokens = jieba.cut(content, cut_all=False, use_paddle=True)
+def get_chinese_tokens(content: str) -> Generator[str, Any, None]:
+    tokens = jieba.cut(content, cut_all=False)
     return tokens
 
 
@@ -42,10 +42,11 @@ def get_stopwords() -> list[str]:
     with open("./data/stop_words", "r", encoding="utf-8") as f:
         for line in f.readlines():
             stopwords.append(line.strip())
+    stopwords.append(' ')
     return stopwords
 
 
-def get_tokens_without_stopwords(tokens: list[str], stopwords: list[str]) -> list[str]:
+def get_tokens_without_stopwords(tokens: Generator[str, Any, None], stopwords: list[str]) -> list[str]:
     tokens_without_stopwords = []
     for token in tokens:
         if token not in stopwords:

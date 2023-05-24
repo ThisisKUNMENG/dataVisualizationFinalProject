@@ -1,7 +1,12 @@
-folium==0.14.0
 jieba==0.42.1
 matplotlib-inline==0.1.6
 matplotlib==3.7.1
 numpy==1.24.3
 pandas==2.0.1
 seaborn==0.12.2
+kaleido==0.2.1
+plotly==5.14.1
+gensim==4.3.1
+pyLDAvis==3.4.0
+wordcloud==1.9.2
+pyecharts==2.0.3
