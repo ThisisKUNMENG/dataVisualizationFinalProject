@@ -63,7 +63,7 @@
     \item 变量数值变换。like变量与对like变量每个值取$\ln(x+1)$如图~\ref{fig:like_loglike_hist}~所示，
     从图中可以发现对like变量每个值取$\ln(x+1)$能更加接近正态，因此，可以对like变量每个值取$\ln(x+1)$并保存在新的变量log\_like中。
     \item 分词处理。将数据集中的content变量通过~\verb|jieba|~库进行分词处理。
-    在分词时，利用自定义停用词表\footnote{见附录~\ref{subsec:stopwords}~}中的词作为停用词，不进行分词。
+    在分词时，利用自定义停用词表\footnote{停用词表位于文件\path{./data/stop_words}中}中的词作为停用词，不进行分词。
     分词后的结果（一个list）保存在新的变量content\_token中。 % NOTE: 可能source\_token没必要
 \end{enumerate}
 
